@@ -54,9 +54,7 @@ public class WordleGame {
         }
         attemptsUsed++;
 
-
         char[] hint = new char[guess.length()];
-
 
         for (int i = 0; i < guess.length(); i++) {
             char c = guess.charAt(i);

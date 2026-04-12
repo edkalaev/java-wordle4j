@@ -60,7 +60,7 @@ public class WordleGame {
 
         for (int i = 0; i < guess.length(); i++) {
             char c = guess.charAt(i);
-            if(c == answer.charAt(i)) {
+            if (c == answer.charAt(i)) {
                 hint[i] = '+';
             } else if (answer.indexOf(c) >= 0) {
                 hint[i] = '^';

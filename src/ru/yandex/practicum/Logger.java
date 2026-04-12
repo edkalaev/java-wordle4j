@@ -25,9 +25,9 @@ public class Logger {
             writer.flush();
             return;
         }
-        try(FileWriter f = new FileWriter(logFileName, true);
+        try (FileWriter f = new FileWriter(logFileName, true);
             BufferedWriter b = new BufferedWriter(f);
-            PrintWriter writer = new PrintWriter(b);) {
+            PrintWriter writer = new PrintWriter(b)) {
             writer.println(message);
         } catch (IOException e) {
             throw new RuntimeException("Ошибка записи лога", e);

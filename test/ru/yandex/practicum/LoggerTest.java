@@ -13,7 +13,7 @@ class LoggerTest {
 
     @AfterEach
     void clean() throws IOException {
-        if(tempFile != null && Files.exists(tempFile)) {
+        if (tempFile != null && Files.exists(tempFile)) {
             Files.delete(tempFile);
         }
     }

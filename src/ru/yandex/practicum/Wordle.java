@@ -14,8 +14,6 @@ import java.util.Scanner;
  */
 public class Wordle {
 
-
-
     public static void main(String[] args) {
         Logger logger = null;
 
@@ -31,14 +29,14 @@ public class Wordle {
                 WordleGame game = new WordleGame(dictionary);
                 Scanner scanner = new Scanner(System.in);
 
-                while(!game.isGameEnded()) {
+                while (!game.isGameEnded()) {
                     System.out.println("Введите слово или Enter для подсказки");
                     String input = scanner.nextLine();
                     input = WordleUtils.normalize(input);
 
 
                     try {
-                        if(input.isEmpty()) {
+                        if (input.isEmpty()) {
                             String hint = game.getHintWord();
                             System.out.println("Подсказка: " + hint);
                             logger.log("Выдана подсказка: " + hint);
@@ -49,7 +47,7 @@ public class Wordle {
                         System.out.println("Результат: " + result.getHint());
                         logger.log("Ход: " + input + " | " + result.getHint());
 
-                        if(game.isWin(input)) {
+                        if (game.isWin(input)) {
                             System.out.println("Вы победили");
                             logger.log("Игрок победил");
                             break;
@@ -65,7 +63,7 @@ public class Wordle {
             } catch (Exception e) {
                 System.out.println("Критическая ошибка: " + e.getMessage());
 
-                if(logger != null) {
+                if (logger != null) {
                     logger.log("Системная ошибка: " + e.getMessage());
                 }
             }

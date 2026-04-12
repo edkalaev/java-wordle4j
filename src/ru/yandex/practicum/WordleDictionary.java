@@ -14,11 +14,11 @@ public class WordleDictionary {
 
     public void add(String element) {
         words.add(element);
-    };
+    }
 
-    public int size(){
+    public int size() {
         return words.size();
-    };
+    }
 
     public boolean contains(String word) {
         return words.contains(word);

@@ -18,6 +18,7 @@ import java.util.Set;
 не забудьте про специальные типы исключений для игровых и неигровых ошибок
  */
 public class WordleGame {
+
     private String answer;
     private WordleDictionary dictionary;
 
@@ -27,8 +28,6 @@ public class WordleGame {
 
     private int attemptsUsed = 0;
     private int maxAttempts = 6;
-
-
 
     public WordleGame(WordleDictionary dictionary) {
         this.dictionary = dictionary;
@@ -108,21 +107,21 @@ public class WordleGame {
 
     private boolean isWordValid(String word) {
 
-        for(int i = 0; i < guesses.size(); i++) {
+        for (int i = 0; i < guesses.size(); i++) {
             String guess = guesses.get(i);
             String hint = hints.get(i);
 
-            for(int j = 0; j < word.length(); j++) {
+            for (int j = 0; j < word.length(); j++) {
                 char gc = guess.charAt(j);
                 char hc = hint.charAt(j);
 
-                if(hc == '+') {
-                    if(word.charAt(j) != gc) return false;
+                if (hc == '+') {
+                    if (word.charAt(j) != gc) return false;
                 } else if (hc == '^') {
                     if (word.indexOf(gc) == -1) return false;
                     if (word.charAt(j) == gc) return false;
                 } else if (hc == '-') {
-                    if(word.indexOf(gc) != -1) return false;
+                    if (word.indexOf(gc) != -1) return false;
                 }
             }
         }

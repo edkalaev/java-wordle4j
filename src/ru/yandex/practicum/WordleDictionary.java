@@ -1,5 +1,6 @@
 package ru.yandex.practicum;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -9,6 +10,30 @@ import java.util.List;
  */
 public class WordleDictionary {
 
-    private List<String> words;
+    private List<String> words = new ArrayList<>();
+
+    public void add(String element) {
+        words.add(element);
+    };
+
+    public int size(){
+        return words.size();
+    };
+
+    public boolean contains(String word) {
+        return words.contains(word);
+    }
+
+    public String getRandomWord() {
+        if (words.isEmpty()) {
+            throw new IllegalStateException("Словарь пуст");
+        }
+        int index = (int) (Math.random() * words.size());
+        return words.get(index);
+    }
+
+    public List<String> getWords() {
+        return words;
+    }
 
 }

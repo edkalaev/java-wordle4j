@@ -19,7 +19,7 @@ public class Logger {
         this.writer = writer;
     }
 
-    public void log(String message){
+    public void log(String message) {
         if (writer != null) {
             writer.println(message);
             writer.flush();
@@ -33,5 +33,4 @@ public class Logger {
             throw new RuntimeException("Ошибка записи лога", e);
         }
     }
-
 }

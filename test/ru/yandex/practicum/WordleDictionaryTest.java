@@ -1,9 +1,7 @@
 package ru.yandex.practicum;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleDictionaryTest {
@@ -16,7 +14,6 @@ public class WordleDictionaryTest {
 
         assertEquals(2, dict.size());
     }
-
 
     @Test
     void testContains() {

@@ -76,12 +76,11 @@ public class WordleGame {
     }
 
     public String getHintWord() {
+
         List<String> candidates = new ArrayList<>();
 
         for (String word : dictionary.getWords()) {
-
             if (usedHints.contains(word)) continue;
-
             if (isWordValid(word)) {
                 candidates.add(word);
             }
@@ -112,7 +111,6 @@ public class WordleGame {
             for (int j = 0; j < word.length(); j++) {
                 char gc = guess.charAt(j);
                 char hc = hint.charAt(j);
-
                 if (hc == '+') {
                     if (word.charAt(j) != gc) return false;
                 } else if (hc == '^') {

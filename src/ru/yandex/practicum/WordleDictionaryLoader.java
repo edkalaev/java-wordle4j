@@ -17,19 +17,22 @@ public class WordleDictionaryLoader {
     }
 
     public WordleDictionary loadDictionary(String filename) {
+
         WordleDictionary dictionary = new WordleDictionary();
 
         logger.log("Чтение словаря из файла: " + filename);
 
-        try (BufferedReader reader =
-                     new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename, StandardCharsets.UTF_8))) {
+
             String line;
+
             while ((line = reader.readLine()) != null) {
                 line = WordleUtils.normalize(line);
                 if (line.length() == 5) {
                     dictionary.add(line);
                 }
             }
+
         } catch (IOException e) {
             logger.log("Ошибка чтения словаря: " + e.getMessage());
         }

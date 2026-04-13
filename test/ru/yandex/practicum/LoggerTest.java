@@ -1,6 +1,8 @@
 package ru.yandex.practicum;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,8 +23,8 @@ class LoggerTest {
     @Test
     void writesContentToFile() throws IOException {
         tempFile = Files.createTempFile("log", "txt.");
-        Logger logger = new Logger(tempFile.toString());
 
+        Logger logger = new Logger(tempFile.toString());
         logger.log("test");
 
         String content = Files.readString(tempFile);
@@ -33,8 +35,8 @@ class LoggerTest {
     @Test
     void appendsContentToFile() throws IOException {
         tempFile = Files.createTempFile("log", "txt.");
-        Logger logger = new Logger(tempFile.toString());
 
+        Logger logger = new Logger(tempFile.toString());
         logger.log("test1");
         logger.log("test2");
 

@@ -1,8 +1,8 @@
 package ru.yandex.practicum;
+
 import org.junit.jupiter.api.Test;
 import java.io.PrintWriter;
 import java.nio.file.Path;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleDictionaryLoaderTest {
@@ -22,5 +22,4 @@ public class WordleDictionaryLoaderTest {
         assertTrue(dict.contains("тюбик"));
 
     }
-
 }

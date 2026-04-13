@@ -1,6 +1,7 @@
 package ru.yandex.practicum;
 
 public class GuessResult {
+
     private final String guess;
     private final String hint;
 
